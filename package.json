@@ -1,0 +1,10 @@
+{
+  "name": "mpe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ishan Chhabra <ishan.chhabra@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
