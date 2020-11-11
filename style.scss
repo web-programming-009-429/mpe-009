@@ -88,18 +88,24 @@ header {
 section.about {
   div.container > div {
     padding-top: 6rem;
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
 
-    img {
-      width: 360px;
-      border-radius: 8px;
-      height: 360px;
-      object-fit: cover;
-      object-position: center;
+    div.mugshot {
       position: relative;
-      display: block;
+      width: 360px;
+      height: 360px;
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 360px;
+        border-radius: 8px;
+        height: 360px;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
 
       &::after {
         content: "";
@@ -108,9 +114,17 @@ section.about {
         border-radius: 8px;
         height: 360px;
         left: 4px;
-        top: 4px;
+        top: 8px;
         display: inline-block;
         border: 1px solid $secondary;
+        z-index: -1;
+        transition: 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95) all;
+      }
+
+      &:hover {
+        &::after {
+          transform: translate(-2px, 2px);
+        }
       }
     }
 

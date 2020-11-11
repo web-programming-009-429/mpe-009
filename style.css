@@ -65,27 +65,36 @@ header {
 
 section.about div.container > div {
   padding-top: 6rem;
-  display: flex;
-  align-items: stretch;
-  justify-content: center; }
-  section.about div.container > div img {
-    width: 360px;
-    border-radius: 8px;
-    height: 360px;
-    object-fit: cover;
-    object-position: center;
+  display: grid;
+  grid-template-columns: 1fr 3fr; }
+  section.about div.container > div div.mugshot {
     position: relative;
-    display: block; }
-    section.about div.container > div img::after {
+    width: 360px;
+    height: 360px; }
+    section.about div.container > div div.mugshot img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 360px;
+      border-radius: 8px;
+      height: 360px;
+      object-fit: cover;
+      object-position: center;
+      display: block; }
+    section.about div.container > div div.mugshot::after {
       content: "";
       position: absolute;
       width: 360px;
       border-radius: 8px;
       height: 360px;
       left: 4px;
-      top: 4px;
+      top: 8px;
       display: inline-block;
-      border: 1px solid #6ad082; }
+      border: 1px solid #6ad082;
+      z-index: -1;
+      transition: 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95) all; }
+    section.about div.container > div div.mugshot:hover::after {
+      transform: translate(-2px, 2px); }
   section.about div.container > div > div {
     padding: 0 1rem; }
     section.about div.container > div > div p {
