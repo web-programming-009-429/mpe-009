@@ -1,8 +1,29 @@
+@charset "UTF-8";
+/**
+GLOBALS
+**/
+h2.heading {
+  font-size: 3rem;
+  color: #6ad082;
+  margin-bottom: 1rem; }
+  h2.heading::after {
+    content: " →"; }
+
+section {
+  padding: 2rem 1rem; }
+
+div.container {
+  max-width: 1200px;
+  margin: 0 auto; }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
+/**
+STYLES
+**/
 html,
 body {
   height: 100%;
@@ -37,3 +58,45 @@ header {
       font-size: 2rem;
       color: #e5e5e5;
       font-weight: 300; }
+
+section.about div.container > div {
+  padding-top: 6rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: center; }
+  section.about div.container > div img {
+    width: 360px;
+    border-radius: 8px;
+    height: 360px;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    display: block; }
+    section.about div.container > div img::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      border-radius: 8px;
+      height: 360px;
+      left: 4px;
+      top: 4px;
+      display: inline-block;
+      border: 1px solid #6ad082; }
+  section.about div.container > div > div {
+    padding: 0 1rem; }
+    section.about div.container > div > div p {
+      margin-bottom: 1rem; }
+      section.about div.container > div > div p a {
+        color: #6ad082;
+        text-decoration: none; }
+    section.about div.container > div > div ul {
+      margin: 0;
+      margin-top: 2rem;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem; }
+      section.about div.container > div > div ul li::before {
+        content: "→ ";
+        color: #6ad082;
+        display: inline-block; }

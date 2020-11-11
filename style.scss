@@ -1,11 +1,37 @@
+/**
+GLOBALS
+**/
+
 $primary: #131230;
 $secondary: #6ad082;
+
+h2.heading {
+  font-size: 3rem;
+  color: $secondary;
+  margin-bottom: 1rem;
+  &::after {
+    content: " →";
+  }
+}
+
+section {
+  padding: 2rem 1rem;
+}
+
+div.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/**
+STYLES
+**/
 
 html,
 body {
@@ -48,6 +74,66 @@ header {
       font-size: 2rem;
       color: #e5e5e5;
       font-weight: 300;
+    }
+  }
+}
+
+section.about {
+  div.container > div {
+    padding-top: 6rem;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    img {
+      width: 360px;
+      border-radius: 8px;
+      height: 360px;
+      object-fit: cover;
+      object-position: center;
+      position: relative;
+      display: block;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 360px;
+        border-radius: 8px;
+        height: 360px;
+        left: 4px;
+        top: 4px;
+        display: inline-block;
+        border: 1px solid $secondary;
+      }
+    }
+
+    & > div {
+      padding: 0 1rem;
+
+      p {
+        margin-bottom: 1rem;
+
+        a {
+          color: $secondary;
+          text-decoration: none;
+        }
+      }
+
+      ul {
+        margin: 0;
+        margin-top: 2rem;
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5rem;
+        li {
+          &::before {
+            content: "→ ";
+            color: $secondary;
+            display: inline-block;
+          }
+        }
+      }
     }
   }
 }
