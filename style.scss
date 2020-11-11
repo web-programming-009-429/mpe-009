@@ -20,7 +20,14 @@ section {
 
 div.container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 4rem auto;
+}
+
+p {
+  a {
+    color: $secondary;
+    text-decoration: none;
+  }
 }
 
 * {
@@ -112,11 +119,6 @@ section.about {
 
       p {
         margin-bottom: 1rem;
-
-        a {
-          color: $secondary;
-          text-decoration: none;
-        }
       }
 
       ul {
@@ -135,5 +137,25 @@ section.about {
         }
       }
     }
+  }
+}
+
+section.contact {
+  h4 {
+    font-size: 2rem;
+    color: #e5e5e5;
+    padding-bottom: 4px;
+    display: inline-block;
+    border-bottom: 1px dotted #e5e5e5;
+    transition: 0.2s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover {
+      color: $secondary;
+      border-bottom-color: $secondary;
+    }
+  }
+
+  p {
+    margin-top: 1rem;
   }
 }
